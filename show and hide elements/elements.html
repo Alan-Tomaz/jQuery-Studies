@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+
+	<title>Show and Hide Elements</title>
+
+	<link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+
+	<!-- bootstrap - link cdn -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+		integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		function showElementPerTag(tag) {
+			$(tag).show();
+		}
+
+		function hideElementPerTag(tag) {
+			$(tag).hide();
+		}
+
+		function showElementPerClassName(className) {
+			$(className).show();
+		}
+
+		function hideElementPerClassName(className) {
+			$(className).hide();
+		}
+
+		function showElementPerId(id) {
+			$("#" + id).show();
+		}
+
+		function hideElementPerId(id) {
+			$("#" + id).hide();
+		}
+	</script>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="jumbotron">
+			<h1>SELECT ELEMENTS WITH JQUERY</h1>
+		</div>
+
+		<hr />
+
+		<div class="row">
+			<div class="col-md-4">
+				<h4>Paragraph (p)</h4>
+			</div>
+			<div class="col-md-4">
+				<h4>Divisors (div)</h4>
+			</div>
+			<div class="col-md-4">
+				<h4>Inputs (input)</h4>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<p class="bg-primary">This is a paragraph</p>
+				<p class="bg-success">This is another paragraph</p>
+			</div>
+
+			<div class="col-md-4">
+				<div style="height: 100px; width: 100px; background:#428bca;" class="div-2 pull-left"></div>
+				<div style="height: 100px; width: 100px; background:#5cb85c; margin-left:15px" class="div-2 pull-left">
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<input type="text" id="input-1" class="form-control" />
+				<input type="text" id="input-2" class="form-control" />
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="row">
+			<div class="col-md-4">
+				<button type="button" class="btn btn-danger" onclick="hideElementPerTag('p')">Hide Paragraph</button>
+				<button type="button" class="btn btn-success" onclick="showElementPerTag('p')">Show Paragraph</button>
+			</div>
+
+			<div class="col-md-4">
+				<button type="button" class="btn btn-danger" onclick="hideElementPerClassName('.div-2')">Hide
+					divs</button>
+				<button type="button" class="btn btn-success" onclick="showElementPerClassName('.div-2')">Show
+					divs</button>
+			</div>
+
+			<div class="col-md-4">
+				<button type="button" class="btn btn-danger"
+					onclick="hideElementPerId('input-1'); hideElementPerId('input-2');">Hide inputs</button>
+				<button type="button" class="btn btn-success"
+					onclick="showElementPerId('input-1'); showElementPerId('input-2');">Show inputs</button>
+			</div>
+
+		</div>
+
+	</div>
+</body>
+
+</html>
